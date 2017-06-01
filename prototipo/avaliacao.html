@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avaliacao dos alunos</title>
+</head>
+ <!-- Bootstrap -->
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+
+
+<body>
+
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+         
+          <a class="navbar-brand" href="#">Sistema Academia</a>
+        </div>
+       
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+	      <div class="col-sm-3 col-md-2 sidebar">
+	          <ul class="nav nav-sidebar">
+	            <li><a href="alunos.html">Alunos</a></li>
+	            <li><a href="funcionario.html">Professores</a></li>
+	            <li><a href="aparelhos.html">Equipamentos</a></li>
+	            <li class="active"><a href="avaliacao.html">Hor&aacute;rios</a></li>
+	          </ul>
+	          
+	         
+	      </div>
+
+	      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	      	<h1 class="page-header">Avalia&ccedil;&atilde;o</h1>
+	      	
+	      	      	
+	      	
+	      	
+	      	<form id="avaliacao" name="avaliacao" method="post" action="cadastro.php" onsubmit="return validaCampo(); return false;">
+		      <table width="625" border="0">
+		        <tr>
+		          <td width="69">Aluno:</td>
+		          <td><input name="nome" type="text" id="nome" size="20" maxlength="60" />
+		            <span class="style1"></span>
+		           Instrutor:
+		          <input name="funcionario" type="text" id="funcionario" size="20" maxlength="60" />
+		            <span class="style1"></span>
+		          </td>
+
+		        </tr>
+
+		        <tr> <h3>Medidas:</h3>
+		          <td width="69">Peso:
+		          <td width="546"><input name="peso" type="text" id="peso" size="20" maxlength="60" />kg
+		           <span class="style1"></span>
+		          Altura:
+		          <input name="altura" type="text" id="altura" size="20" maxlength="60" />
+		          <span class="style1"></span>
+		          </td>
+
+		          <tr>
+					<td width="69">IMC:
+		            <td width="546"><input name="imc" type="text" id="imc" size="20" maxlength="60" />
+		           
+		            Peso Ideal:
+		            <input name="pesoi" type="text" id="pesoi" size="18" maxlength="60" />
+		          
+		            </td>
+		          </tr>
+		        
+		          
+		          
+		        
+		        <tr>
+		        	<td width="69"><h3>Dobras Cutaneas:</h3></td>
+		        </tr>
+		        <tr>
+		          <td>SubEscabular:</td>
+		          <td><input name="sube" type="text" id="sube" size="10" maxlength="2" /></td>
+		        </tr>
+		        <tr>
+		          <td>Bicipital:</td>
+		          <td><input name="bic" type="text" id="bici" size="10" maxlength="2" /></td>
+		        </tr>
+		        <tr>
+		          <td>Tricipital:</td>
+		          <td><input name="tri" type="text" id="tri" size="10" maxlength="2" /></td>
+		        </tr>
+		        <tr>
+		          <td>Auxiliar Media:</td>
+		          <td><input name="aux" type="text" id="aux" size="10" maxlength="2" /></td>
+		        </tr>
+		        <tr>
+		          <td>Supra-iliaca:</td>
+		          <td><input name="sru" type="text" id="sru" size="10" maxlength="2" /></td>
+		        </tr>
+		        <tr>
+		          <td>Peitoral:</td>
+		          <td><input name="pei" type="text" id="pei" size="10" maxlength="2" /></td>
+		        </tr>
+		        <tr>
+		          <td>Abdominal:</td>
+		          <td><input name="abd" type="text" id="abd" size="10" maxlength="2" /></td>
+		        </tr>
+		        <tr>
+		          <td>Coxa:</td>
+		          <td><input name="coxa" type="text" id="coxa" size="10" maxlength="2" /></td>
+		        </tr><tr>
+		          <td>Panturilha:</td>
+		          <td><input name="pan" type="text" id="pan" size="10" maxlength="2" /></td>
+		        </tr>
+
+
+		        <tr>
+		          <td><br>Protocolo:</td>
+		          <td><br><select name="protocolo" id="protocolo">
+		            <option>Selecione...</option>
+		            <option value="Pol7">Pollock - 7 dobras</option>
+		            <option value="Pol3">Pollock - 3 dobras</option>
+		            <option value="Pol4">Pollock - 4 dobras</option>
+		            <option value="Fa">Faulkner - 4 dobras</option>
+		            <option value="bio">Bioimpedancia</option>
+		           </select>
+		           % Gordura Ideal: <input name="calcular" type="submit" id="Calcular" value="Calcular" />
+		           </td>
+		           </tr>
+		           <br>
+		          
+		       
+		        
+		        <tr>
+		          <td colspan="4"><p>
+		            <input name="salvar" type="submit" id="salvar" value="Salvar" />
+
+		           
+		     
+		              <input name="cancelar" type="reset" id="cancelar" value="Cancelar" />
+		               
+		             
+		     
+		              
+		          <p>  </p></td>
+		        </tr>
+		      </table>
+    		</form>
+
+
+
+
+
+	      </div>
+
+      	</div>
+      </div>
+
+
+
+
+ 	
+
+</body>
+</html>
