@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Funcionarios</title>
+</head>
+ <!-- Bootstrap -->
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+
+
+<body>
+
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+         
+          <a class="navbar-brand" href="#">Sistema Academia</a>
+        </div>
+       
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+	      <div class="col-sm-3 col-md-2 sidebar">
+	          <ul class="nav nav-sidebar">
+	            <li><a href="alunos.html">Alunos</a></li>
+	            <li class="active"><a href="funcionario.html">Professores<span class="sr-only">(current)</span></a></li>
+	            <li><a href="aparelhos.html">Aparelhos</a></li>
+	            <li><a href="horarios.html">Hor&aacute;rios</a></li>
+	          </ul>
+	          
+	         
+	      </div>
+
+	      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	      	<h1 class="page-header">Professores</h1>
+	      	
+	      	<button type="button" class="btn btn-primary btn-lg" onClick="javascript:window.location.href='novoFuncionario.html'">Novo Funcionario</button>
+	      	<h3>Listagem</h3>
+	      	<table class="table" id="tabela-usuarios">
+	      		<thead>
+	      			<tr>
+		      			<th style="width: 15%">Matr&iacute;cula</th>
+		      			<th>Nome</th>
+		      			<th>Cargo</th>
+		      			<th>Modalidade</th>
+		      			<th>A&ccedil;&atilde;o</th>
+	      			</tr>
+	      		</thead>
+	      		<tbody>
+	      			
+	      		</tbody>
+
+
+	      	</table>
+
+	      </div>
+
+      	</div>
+      </div>
+
+
+
+
+ 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    	function carregUsers(data){
+    		count = 0;
+    		data.results.forEach(function(obj) {
+    		html ='<tr>'+
+		      			'<th scope="row">'+count+'</th> '+
+		      			'<td style="text-transform: capitalize;">'+obj.name.first+' '+obj.name.last+'</td> '+
+		      			'<td>Instrutor</td>'+
+		      			'<td>Muscula&ccedil;&atilde;o</td>'+
+		      			'<td>'+
+		      			'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>'+
+		      			'<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span></button>'+
+		      			'</td>'+
+	      			'</tr>';
+	      	$('#tabela-usuarios tbody').append(html);
+	      	count++;
+
+    	});
+
+
+
+    		
+    	}
+
+
+    	$(document).ready(function(){
+    		$.ajax({
+			  url: 'https://randomuser.me/api/?results=20',
+			  dataType: 'json',
+			  success: function(data) {
+			    carregUsers(data);
+			  }
+			});
+    	});
+    </script>
+
+</body>
+</html>
