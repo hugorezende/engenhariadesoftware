@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagina inicial</title>
+</head>
+ <!-- Bootstrap -->
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+
+
+<body>
+
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+         
+          <a class="navbar-brand" href="#">Sistema Academia</a>
+        </div>
+       
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+
+	      <div class="col-sm-3 col-md-2 sidebar">
+	          <ul class="nav nav-sidebar">
+	            <li><a href="alunos.html">Alunos</a></li>
+	            <li><a href="funcionario.html">Professores</a></li>
+	            <li><a href="aparelhos.html">Equipamentos</a></li>
+	            <li><a href="avaliacao.html">Avalia&ccedil;&atilde;o</a></li>
+		     	<li><a href="treino.html">Ficha de Treinamento</a><li>
+		     	<li class="active"><a href ="exercicio.html">Exerc&iacute;cios</a><li>
+	          </ul>
+	          
+	         
+	      </div>
+
+	      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	      	<h1 class="page-header">Exercicios</h1>
+	      	<form id="cadastro" name="cadastro" method="post" action="cadastro.php" onsubmit="return validaCampo(); return false;">
+      			<table width="625" border="0">
+        		<tr>
+          			<td width="69">Nome:</td>
+          			<td width="546"><input name="nome" type="text" id="nome" size="30" maxlength="30" />
+            		<span class="style1">*</span></td>
+        		</tr>
+        		<tr>
+          			<td>Grupo Muscular:</td>
+          			<td><select name="grupo" id="grupo" >
+          			</select>
+          			<span class="style1">*</span></td>
+        		</tr>
+        		<tr>
+          			<td width="69">Repetic&atilde;o:</td>
+          			<td width="546"><input name="repeticao" type="text" id="repeticao" size="30" maxlength="60" />
+            		</td>
+        		</tr>
+        		<tr>
+          			<td>S&eacute;rie:</td>
+          			<td><input name="serie" type="text" id="serie" size="30" maxlength="60" />
+          			</td>
+        		</tr>
+        		<tr>
+		          <td colspan="4"><p>
+		            <input name="cadastrar" type="submit" id="cadastrar" value="Concluir Cadastro" />
+
+		           
+		     
+		              <input name="limpar" type="reset" id="limpar" value="Limpar Campos preenchidos!" />
+		               
+		             
+		     
+		              <span class="style1">* Campos com * s&atilde;o obrigat&oacute;rios!          </span></p>
+		          <p>  </p></td>
+		        </tr>
+
+         		</table>
+    		</form>
+
+	      </div>
+	      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    	
+
+
+    	<script type="text/javascript">
+    function validaCampo()
+    {
+    if(document.cadastro.nome.value=="")
+    {
+    alert("O Campo Nome é obrigatório!");
+    return false;
+    }   
+    if(document.cadastro.grupo.value=="")
+    {
+    alert("O Campo Grupo Muscular é obrigatório!");
+    return false;
+   
+    }
+    
+    else
+    return true;
+    }
+    <!-- Fim do JavaScript que validará os campos obrigatórios! -->
+    </script>
+    </script>
+</body>
+</html>
